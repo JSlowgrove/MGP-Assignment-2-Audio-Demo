@@ -8,6 +8,7 @@
 #include "JAM/Audio.h"
 #include "JAM/Utilities.h"
 #include "JAM/Button.h"
+#include "JAM/Text.h"
 
 /**
 @brief Creates an Game object that inherits State and runs the Game.
@@ -23,6 +24,8 @@ private:
 	JAM_Audio* soundEffect;
 	/**A boolean value for if the music is playing*/
 	bool playing;
+	/**The Text*/
+	std::vector<JAM_Text*> text;
 
 	/**
 	Handles the Windows Game input.

@@ -12,13 +12,13 @@ Game::Game(JAM_StateManager * stateManager, SDL_Renderer* renderer, int screenWi
 	JAM_Texture* stopTexture = new JAM_Texture("img/stop.png", renderer);
 
 	/*initialise buttons*/
-	buttons.push_back(new JAM_Button(stopTexture, JAM_Utilities::scaleNumber(200.0f, screenHeight), 
-		JAM_Utilities::scaleNumber(180.0f, screenHeight), JAM_Utilities::scaleNumber(100.0f, screenHeight),
+	buttons.push_back(new JAM_Button(stopTexture, (screenWidth * 0.5f) - JAM_Utilities::scaleNumber(150.0f, screenHeight),
+		JAM_Utilities::scaleNumber(100.0f, screenHeight), JAM_Utilities::scaleNumber(100.0f, screenHeight),
 		JAM_Utilities::scaleNumber(100.0f, screenHeight)));
-	buttons.push_back(new JAM_Button(playTexture, JAM_Utilities::scaleNumber(350.0f, screenHeight),
-		JAM_Utilities::scaleNumber(180.0f, screenHeight), JAM_Utilities::scaleNumber(100.0f, screenHeight),
+	buttons.push_back(new JAM_Button(playTexture, (screenWidth * 0.5f) + JAM_Utilities::scaleNumber(50.0f, screenHeight),
+		JAM_Utilities::scaleNumber(100.0f, screenHeight), JAM_Utilities::scaleNumber(100.0f, screenHeight),
 		JAM_Utilities::scaleNumber(100.0f, screenHeight)));
-	buttons.push_back(new JAM_Button(playTexture, JAM_Utilities::scaleNumber(200.0f, screenHeight),
+	buttons.push_back(new JAM_Button(playTexture, (screenWidth * 0.5f) - JAM_Utilities::scaleNumber(50.0f, screenHeight),
 		JAM_Utilities::scaleNumber(300.0f, screenHeight), JAM_Utilities::scaleNumber(100.0f, screenHeight),
 		JAM_Utilities::scaleNumber(100.0f, screenHeight)));
 
@@ -28,6 +28,35 @@ Game::Game(JAM_StateManager * stateManager, SDL_Renderer* renderer, int screenWi
 
 	/*initialise the playing boolean*/
 	playing = false;
+
+#ifdef _WIN32
+
+	/*initialise the text*/
+	text.push_back(new JAM_Text(
+		"Hit Escape to Quit", "font/CODE_Bold.ttf",
+		(int)JAM_Utilities::scaleNumber(20.0f, screenHeight),
+		renderer, 0, 0, 0));
+
+#elif __ANDROID__
+
+	/*initialise the text*/
+	text.push_back(new JAM_Text(
+		"Hit Back to Quit", "font/CODE_Bold.ttf",
+		(int)JAM_Utilities::scaleNumber(20.0f, screenHeight),
+		renderer, 0, 0, 0));
+
+#endif
+
+	/*initialise the text*/
+	text.push_back(new JAM_Text(
+		"Music:", "font/CODE_Bold.ttf",
+		(int)JAM_Utilities::scaleNumber(25.0f, screenHeight),
+		renderer, 0, 0, 0));
+
+	text.push_back(new JAM_Text(
+		"Sound Effect:", "font/CODE_Bold.ttf",
+		(int)JAM_Utilities::scaleNumber(25.0f, screenHeight),
+		renderer, 0, 0, 0));
 }
 
 /**************************************************************************************************************/
@@ -44,6 +73,10 @@ Game::~Game()
 	for (auto button : buttons)
 	{
 		delete button;
+	}
+	for (auto message : text)
+	{
+		delete message;
 	}
 }
 
@@ -171,4 +204,9 @@ void Game::draw()
 	buttons[0]->draw(renderer);
 	buttons[1]->draw(renderer);
 	buttons[2]->draw(renderer);
+
+	/*display text*/
+	text[0]->pushToScreen((int)JAM_Utilities::scaleNumber(10.0f, screenHeight), (int)JAM_Utilities::scaleNumber(10.0f, screenHeight));
+	text[1]->pushToScreen((int)(screenWidth * 0.5f) - (int)(text[1]->getDimensions().x * 0.5f), (int)JAM_Utilities::scaleNumber(10.0f, screenHeight));
+	text[2]->pushToScreen((int)(screenWidth * 0.5f) - (int)(text[2]->getDimensions().x * 0.5f), (int)JAM_Utilities::scaleNumber(240.0f, screenHeight));
 }

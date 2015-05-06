@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
 	int winPosY = 100;
 	winWidth = 640;
 	winHeight = 480;
-	window = SDL_CreateWindow("MGPDemo",  /*The first parameter is the window title*/
+	window = SDL_CreateWindow("MGPDemoAudio",  /*The first parameter is the window title*/
 		winPosX, winPosY,
 		winWidth, winHeight,
 		SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
