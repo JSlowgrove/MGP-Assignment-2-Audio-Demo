@@ -12,11 +12,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\JAM\ArrowPad.cpp" />
+    <ClCompile Include="src\JAM\AStar.cpp" />
     <ClCompile Include="src\JAM\Audio.cpp" />
     <ClCompile Include="src\JAM\Button.cpp" />
     <ClCompile Include="src\JAM\CollisionDetection.cpp" />
     <ClCompile Include="src\JAM\Entity.cpp" />
     <ClCompile Include="src\JAM\Flocking.cpp" />
+    <ClCompile Include="src\JAM\LOS.cpp" />
+    <ClCompile Include="src\JAM\Node.cpp" />
     <ClCompile Include="src\JAM\Particle.cpp" />
     <ClCompile Include="src\JAM\ParticleEffect.cpp" />
     <ClCompile Include="src\JAM\State.cpp" />
@@ -28,11 +32,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game.h" />
+    <ClInclude Include="src\JAM\ArrowPad.h" />
+    <ClInclude Include="src\JAM\AStar.h" />
     <ClInclude Include="src\JAM\Audio.h" />
     <ClInclude Include="src\JAM\Button.h" />
     <ClInclude Include="src\JAM\CollisionDetection.h" />
     <ClInclude Include="src\JAM\Entity.h" />
     <ClInclude Include="src\JAM\Flocking.h" />
+    <ClInclude Include="src\JAM\LOS.h" />
+    <ClInclude Include="src\JAM\Node.h" />
     <ClInclude Include="src\JAM\Particle.h" />
     <ClInclude Include="src\JAM\ParticleEffect.h" />
     <ClInclude Include="src\JAM\State.h" />
