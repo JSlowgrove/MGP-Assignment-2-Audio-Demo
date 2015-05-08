@@ -11,20 +11,21 @@
 #include "JAM/Text.h"
 
 /**
-@brief Creates an Game object that inherits State and runs the Game.
+@brief Creates an Game object that inherits State and runs the Game
+@author Jamie Slowgrove
 */
 class Game : public JAM_State
 {
 private:
-	/**The Buttons*/
+	/**The Buttons.*/
 	std::vector<JAM_Button*> buttons;
-	/**A pointer to the background music*/
+	/**A pointer to the background music.*/
 	JAM_Audio* music;
-	/**A pointer to the sound effect*/
+	/**A pointer to the sound effect.*/
 	JAM_Audio* soundEffect;
-	/**A boolean value for if the music is playing*/
+	/**A boolean value for if the music is playing.*/
 	bool playing;
-	/**The Text*/
+	/**The Text.*/
 	std::vector<JAM_Text*> text;
 
 	/**
@@ -43,7 +44,7 @@ private:
 
 public:
 	/**
-	Constructs a Game object.
+	Constructs the Game object.
 	@param stateManager A pointer to the StateManager.
 	@param renderer A pointer to the renderer.
 	@param screenWidth The screen width.
@@ -52,7 +53,7 @@ public:
 	Game(JAM_StateManager* stateManager, SDL_Renderer* renderer, int screenWidth, int screenHeight);
 
 	/**
-	Destructs an Game object.
+	Destructs the Game object.
 	*/
 	~Game();
 
