@@ -33,7 +33,7 @@ http://creativecommons.org/licenses/by/3.0/
 CODE Bold Font:   
 http://www.dafont.com/code.font  
   
-Sound Effect Art used is from the Kenney Asset Pack:  
+Sound Effect & Art used is from the Kenney Asset Pack:  
 http://kenney.itch.io/kenney-donation  
   
 This is the code for my second MGP Assignment for my Audio Demo.  
